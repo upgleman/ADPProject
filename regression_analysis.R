@@ -47,7 +47,8 @@ vif(car.lm) # VIF 다중 공산성 4이상인지 확인 필요
 
 #SST 전체제곱합 구하기
 SST <- sum((car$Sales-mean(car$Sales))^2)
-#SSR 회귀제곱합 구하기 / fitted.values : 예측치
+#SSR 회귀제곱합 구하기 / fitted.values : 예측치 car 데이터가 표본이라는 점 확인 필요
+#모델 예측값에서 표본의 평균을 뺀 값
 SSR <-sum((car.lm$fitted.values-mean(car$Sales))^2)
 #SSE 오차제곱합 구하기 / residuals: 실제값 - 예측치를 뺀 값 /car$Sales-car.lm$fitted.values
 SSE <- sum((car.lm$residuals)^2)
