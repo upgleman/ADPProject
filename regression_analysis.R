@@ -50,7 +50,7 @@ SST <- sum((car$Sales-mean(car$Sales))^2)
 #SSR 회귀제곱합 구하기 / fitted.values : 예측치 car 데이터가 표본이라는 점 확인 필요
 #모델 예측값에서 표본의 평균을 뺀 값
 SSR <-sum((car.lm$fitted.values-mean(car$Sales))^2)
-#SSE 오차제곱합 구하기 / residuals: 실제값 - 예측치를 뺀 값 /car$Sales-car.lm$fitted.values
+#SSE 오차(잔차)제곱합 구하기 / residuals: 실제값 - 예측치를 뺀 값 /car$Sales-car.lm$fitted.values
 SSE <- sum((car.lm$residuals)^2)
 # SSE2 <- sum((car$Sales-car.lm$fitted.values)^2)
 
@@ -58,6 +58,7 @@ SSE <- sum((car.lm$residuals)^2)
 R_2 <- SSR/SST
 
 #수정된 결정계수 1 - (n-1)*(SSE/SST)/(n-k-1)
+# k: 독립변수 개수
 A <- (400 -1)*(SSE/SST)
 B <- 400-5-1
 Adj_R2 <- 1-(A/B)
