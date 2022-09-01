@@ -5,8 +5,13 @@ summary(USArrests)
 
 #주성분 분석 (PCA) fitting
 #cor 공분산 행렬이 아닌 상관계수 행렬 사용
+# 상관계수행렬 또는 공분산행렬에 대한 Eigenvalue Decomposition(고유근분해)을 이용하여 계산
 fit <- princomp(USArrests, cor = TRUE)
 summary(fit)
+
+#prcomp 함수 center 가운데로 0, scale 표준화 T
+#원 데이터에 대해 SVD(Singular Value Decomposition : 특이값분해)를 수행하여 계산
+fit2 <- prcomp(USArrests, scale=TRUE)
 
 #주성분 PC들의 로딩벡터
 loadings(fit)
@@ -16,7 +21,7 @@ loadings(fit)
 
 #scree plot - 주성분의 분산 plot
 plot(fit, type = "lines")
-
+plot(fit2, type = "lines")
 #모든 관측치 /변수를 주성분으로 표현
 fit$scores
 
