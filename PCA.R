@@ -27,6 +27,7 @@ fit$scores
 
 #첫 번쨰와 두번쨰 주성분의 좌표에 관측치들을 그린 plot
 biplot(fit)
+biplot(fit2)
 
 #결과 첫 번째 주성분이 Assault, Murder, Rape와 비슷한 방향을 가짐
 #두 번째 주성분은 urban pop과 상대적으로 평행하기에 urban pop에 큰 영향을 받았음
