@@ -27,8 +27,10 @@ swiss.mds <- isoMDS(swiss.dist)
 #type 점을 찍지 않음
 plot(swiss.mds$points, type ="n")
 text(swiss.mds$points, labels= as.character(1:nrow(swiss.x)))
-abline(v=0, h =0, lty =2, lwd =0.5)
-?abline
+#h : 수평선 위치, v : 수직선 위치
+#lty : line type. 선의 모양. lwd : 선의 굵기
+abline(v=0, h =0, lty =4, lwd =0.5)
+
 
 #sammon : Non-Linear Mapping
 swiss.x <- as.matrix(swiss[,-1])
