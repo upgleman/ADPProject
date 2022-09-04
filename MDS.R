@@ -10,18 +10,25 @@ abline(v=0, h=0, lty =2, lwd =0.5)
 str(loc)
 x1 <- loc[,-1]
 #비계량적 MDS - 순서척도
+data(swiss)
 summary(swiss)
 str(swiss)
 dim(swiss)
 swiss["Agriculture"]
+#df 열이름 출력
 colnames(swiss)
 
-#Fertility  제거
+#-1 : 첫번째 행 Fertility  제거 
 swiss.x <- as.matrix(swiss[,-1])
+summary(swiss.x)
+str(swiss.x)
+dim(swiss.x)
 
 colnames(swiss.x)
+rownames(swiss.x)
 #dist 함수 모든 행사이 거리 계산 n(n-1)/2
 swiss.dist <- dist(swiss.x)
+#isoMDS : Kruskal's Non-metric Multidimensional Scaling
 swiss.mds <- isoMDS(swiss.dist)
 
 #type 점을 찍지 않음
